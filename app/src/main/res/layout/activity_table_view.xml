@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:scrollbars="none">
+    <!--//android:collapseColumns:设置需要被隐藏的列的序号
+    //android:shrinkColumns:设置允许被收缩的列的列序号
+    // android:stretchColumns:设置运行被拉伸的列的列序号-->
+
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="@drawable/table_v_divider"
+        android:orientation="vertical"
+        android:showDividers="middle|beginning|end">
+
+        <!--<TableRow>-->
+
+        <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="50dp"-->
+        <!--android:gravity="center"-->
+        <!--android:minEms="6"-->
+        <!--android:text="体检日期" />-->
+
+        <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="50dp"-->
+        <!--android:layout_weight="1"-->
+        <!--android:gravity="center"-->
+        <!--android:text="年 月 日  责任医生" />-->
+
+        <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="50dp"-->
+        <!--android:gravity="center"-->
+        <!--android:minEms="6"-->
+        <!--android:text="李四" />-->
+        <!--</TableRow>-->
+
+        <TableRow
+            android:divider="@drawable/table_h_divider"
+            android:orientation="horizontal"
+            android:showDividers="middle|beginning|end">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:gravity="center"
+                android:maxEms="4"
+                android:text="内容" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="检查项目" />
+
+
+        </TableRow>
+
+        <TableRow
+            android:divider="@drawable/table_h_divider"
+            android:orientation="horizontal"
+            android:showDividers="middle|beginning|end">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="症状" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="这边自己把条目写进去" />
+
+
+        </TableRow>
+
+        <TableRow
+            android:divider="@drawable/table_h_divider"
+            android:orientation="horizontal"
+            android:showDividers="middle|beginning|end">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:maxEms="3"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:text="一般状况" />
+
+            <TableLayout
+                android:layout_weight="1"
+                android:divider="@drawable/table_v_divider"
+                android:orientation="vertical"
+                android:showDividers="middle">
+
+                <TableRow
+                    android:divider="@drawable/table_h_divider"
+                    android:orientation="horizontal"
+                    android:showDividers="middle">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:gravity="center"
+                        android:minEms="6"
+                        android:text="体温" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="℃" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:minEms="6"
+                        android:text="脉率" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="次/分钟" />
+                </TableRow>
+
+                <TableRow
+                    android:divider="@drawable/table_h_divider"
+                    android:orientation="horizontal"
+                    android:showDividers="middle">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="60dp"
+                        android:gravity="center"
+                        android:text="呼吸频率" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="次/分钟" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="60dp"
+                        android:gravity="center"
+                        android:text="血压" />
+
+                    <TableLayout android:layout_weight="1">
+
+                        <TableRow
+                            android:divider="@drawable/table_h_divider"
+                            android:orientation="horizontal"
+                            android:showDividers="middle">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="30dp"
+                                android:gravity="center"
+                                android:minEms="3"
+                                android:text="左侧" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="30dp"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="mmHg" />
+                        </TableRow>
+
+                        <TableRow
+                            android:divider="@drawable/table_h_divider"
+                            android:orientation="horizontal"
+                            android:showDividers="middle">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="30dp"
+                                android:gravity="center"
+                                android:minEms="3"
+                                android:text="右侧" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="30dp"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="mmHg" />
+                        </TableRow>
+                    </TableLayout>
+                </TableRow>
+
+                <TableRow
+                    android:divider="@drawable/table_h_divider"
+                    android:orientation="horizontal"
+                    android:showDividers="middle">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:gravity="center"
+                        android:text="身高" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="身高" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="身高" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="身高" />
+                </TableRow>
+
+                <TableRow
+                    android:divider="@drawable/table_h_divider"
+                    android:orientation="horizontal"
+                    android:showDividers="middle">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:gravity="center"
+                        android:text="腰围" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:gravity="center"
+                        android:maxEms="6"
+                        android:text="老年人健康\n状态自我评估*" />
+                </TableRow>
+            </TableLayout>
+
+
+        </TableRow>
+
+    </TableLayout>
+</ScrollView>

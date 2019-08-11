@@ -1,0 +1,6 @@
+include ':app', ':HandlerLib'
+//include':libzhi'
+
+// libzhi
+include ':libzhi'
+project(':libzhi').projectDir = new File('D:\\work\\source\\gitlab\\zhi-sdk\\libzhi')
