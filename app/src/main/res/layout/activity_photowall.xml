@@ -2,15 +2,16 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <GridView
         android:id="@+id/photo_wall"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:columnWidth="90dip"
-        android:stretchMode="columnWidth"
+        android:gravity="center"
         android:numColumns="auto_fit"
-        android:verticalSpacing="10dip"
-        android:gravity="center"/>
+        android:stretchMode="columnWidth"
+        android:verticalSpacing="10dip" />
 
     <!--<ListView
         android:id="@+id/photo_wall"

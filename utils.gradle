@@ -1,0 +1,74 @@
+import groovy.util.slurpersupport.GPathResult
+
+def parseXml(){
+    def xparser = new XmlSlurper()
+    def targetFile = new File('test.xml')
+
+    GPathResult gPathResult = xparser.parse(targetFile)
+
+    def book = gPathResult.value.books.book[3]
+    def author = book.author
+    def title = book.title
+
+    println("book id: " + book['@id'] + ", available： " + book['@available'])
+    println("author: " + author + ", title: " + title + ", author id: " + author.@id)
+
+    def mainManifest = project.file("src/main/AndroidManifest.xml")
+    def xparser2 = new XmlSlurper()
+    GPathResult gPathResult1 = xparser2.parse(mainManifest)
+
+    def packageName = gPathResult1['@package']
+
+    println("app packageName: " + packageName)
+
+}
+
+def copyFile(String srceFile, destFile){
+
+}
+
+def rmFile(String targetFile){
+
+}
+
+def cleanOutput(boolean  bJar=true){
+
+}
+
+def copyOutput(boolean  bJar = true){
+    if (bJar){
+        println "copy output to specified dir"
+    }
+}
+
+def getManifestVersionName(){
+    def xmlFile = project.file("src/main/AndroidManifest.xml")
+    def rootManifest = new XmlParser().parse(xmlFile)
+    return rootManifest.'@android:versionname'
+}
+
+//对于android library编译，我会disable所有的debug编译任务
+def disableDebugBuild(){
+    //project.tasks包含了所有的tasks，下面的findAll是寻找那些名字中带debug的Task。
+    //返回值保存到targetTasks容器中
+    def targetTasks = project.tasks.findAll {task ->
+        task.name.contains("Debug")
+    }
+
+    //对满足条件的task，设置它为disable。如此这般，这个Task就不会被执行
+    targetTasks.each {it ->
+        println("disable debug task: ${it.name}")
+        it.setEnabled(false)
+    }
+}
+
+//将函数设置为extra属性中去，这样，加载utils.gradle的Project就能调用此文件中定义的函数了
+ext{
+    parseXml = this.&parseXml
+    copyFile = this.&copyFile
+    rmFile = this.&rmFile
+    cleanOutput = this.&cleanOutput
+    copyOutput = this.&copyOutput
+    getManifestVersionName = this.&getManifestVersionName
+    disableDebugBuild = this.&disableDebugBuild
+}

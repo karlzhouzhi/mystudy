@@ -1,14 +1,14 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
-buildscript { 
 
+buildscript {
     repositories {
         google()
         jcenter()
         
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.4.0'
+        classpath 'com.android.tools.build:gradle:3.4.2'
         classpath 'com.hujiang.aspectjx:gradle-android-plugin-aspectjx:2.0.4'
 
         // NOTE: Do not place your application dependencies here; they belong
@@ -16,14 +16,39 @@ buildscript {
     }
 }
 
+//apply(from: rootProject.getRootDir().getAbsolutePath()+'/utils.gradle')
+//println "2-根项目路径：" + rootDir.getAbsolutePath()
+
+// Configures this project and each of its sub-projects.
 allprojects {
     repositories {
         google()
         jcenter()
         
     }
+
+    println "配置子project：$project.name"  // 遍历子project，project变量对应每个子project
+
+    apply(from: rootProject.getRootDir().getAbsolutePath()+'/utils.gradle')
 }
 
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+println "In root project, gradle id is " +gradle.hashCode()
+println "In root project Home Dir:" + gradle.gradleHomeDir
+println "In root project User Home Dir:" + gradle.gradleUserHomeDir
+println "In root project Parent: " + gradle.parent
+
+// Define versions in a single place
+ext {
+
+    // Sdk and tools
+    minSdkVersion = 16 //4.0
+    targetSdkVersion = 28
+    compileSdkVersion = 28
+    buildToolsVersion = '28.0.2'
+}
+
+apply(from: 'testGradle.gradle')

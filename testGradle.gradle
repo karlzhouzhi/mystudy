@@ -1,0 +1,57 @@
+
+// 创建task的几种方法
+task hello{
+    doLast{
+        println('hello world')
+    }
+}
+
+Task hello2=task(hello2)
+hello2.doLast {
+    println("hello2")
+}
+
+Task hello3 = task(hello3, group: BasePlugin.BUILD_GROUP)
+hello3.doLast {
+    println("hello3")
+}
+
+tasks.create(name: 'hello4'){
+    doLast{
+        println("hello4")
+    }
+}
+
+// 依赖
+task go(dependsOn: hello4){
+    doLast{
+        println("go")
+    }
+}
+
+// 动态定义任务
+3.times {
+    number ->
+        task "task${number}" {
+            doLast {
+                println("this is task ${number}")
+            }
+        }
+}
+
+// 分组
+task hello5{
+    group = 'build'
+    description = 'hello5'
+    doLast{
+        println("分组： ${group}, 描述：${description}")
+    }
+}
+
+task go2(dependsOn: hello5){
+    group = 'copy'
+    description = '拷贝'
+    doLast{
+        println("分组： ${group}， 描述：${description}")
+    }
+}

@@ -6,3 +6,8 @@ dependencies {
 
 sourceCompatibility = "7"
 targetCompatibility = "7"
+
+println "In handlerLib project, gradle id is " +gradle.hashCode()
+println "In handlerLib project Home Dir:" + gradle.gradleHomeDir
+println "In handlerLib project User Home Dir:" + gradle.gradleUserHomeDir
+println "In handlerLib project Parent: " + gradle.parent

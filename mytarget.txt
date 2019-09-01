@@ -1,0 +1,5 @@
+Package groovy.lang
+Package groovy.lang Description
+Core Groovy language classes for implementing data structures, closures, metadata and so forth.
+读取文件内容：
+使用java代码的基本写法：

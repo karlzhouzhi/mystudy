@@ -1,11 +1,14 @@
 apply plugin: 'com.android.application'
 
+println "app 项目根路径： " + rootProject.getRootDir().getAbsolutePath()
+//apply(from: rootProject.getRootDir().getAbsolutePath()+'/utils.gradle')
+
 android {
-    compileSdkVersion 28
+    compileSdkVersion rootProject.compileSdkVersion
     defaultConfig {
         applicationId "karl.com.mystudy"
-        minSdkVersion 21
-        targetSdkVersion 28
+        minSdkVersion rootProject.minSdkVersion
+        targetSdkVersion rootProject.targetSdkVersion
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -74,3 +77,10 @@ dependencies {
 repositories {
     mavenCentral()
 }
+
+println "In app project, gradle id is " +gradle.hashCode()
+println "In app project Home Dir:" + gradle.gradleHomeDir
+println "In app project User Home Dir:" + gradle.gradleUserHomeDir
+println "In app project Parent: " + gradle.parent
+
+parseXml()

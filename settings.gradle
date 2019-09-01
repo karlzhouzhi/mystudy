@@ -1,6 +1,23 @@
-include ':app', ':HandlerLib'
+include ':app', ':HandlerLib', ':testgroovy'
 //include':libzhi'
 
 // libzhi
 include ':libzhi'
 project(':libzhi').projectDir = new File('D:\\work\\source\\gitlab\\zhi-sdk\\libzhi')
+
+println "In root project setting, gradle id is " +gradle.hashCode()
+println "In root project setting Home Dir:" + gradle.gradleHomeDir
+println "In root project setting User Home Dir:" + gradle.gradleUserHomeDir
+println "In root project setting Parent: " + gradle.parent
+
+def initMnishengGradleEnv(){
+    Properties properties = new Properties()
+    File propertyFile = new File(rootDir.getAbsolutePath() + "/local.properties")
+    properties.load(propertyFile.newDataInputStream())
+
+    gradle.ext.projectName = properties.getProperty('projectName')
+
+    println "settings 测试项目名：" + gradle.projectName
+}
+
+initMnishengGradleEnv()

@@ -8,6 +8,8 @@ import android.graphics.ColorMatrixColorFilter;
 import android.graphics.Paint;
 import android.widget.ImageView;
 
+import java.io.File;
+
 /**
  * 收集的颜色滤镜
  */
