@@ -45,7 +45,7 @@ println "In root project Parent: " + gradle.parent
 ext {
 
     // Sdk and tools
-    minSdkVersion = 16 //4.0
+    minSdkVersion = 19 //4.0
     targetSdkVersion = 28
     compileSdkVersion = 28
     buildToolsVersion = '28.0.2'
